@@ -1,0 +1,26 @@
+{% extends "layout.njk" %}
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}[Cypress] Validate Dropdown Options Example<{% endblock %}
+
+
+{% block content %}
+  <h1 class="govuk-heading-l">Cypress Validate Dropdown Options Example</h1>
+
+  <form method="post">
+    {{ govukSelect({
+      id: "sort",
+      name: "sort",
+      label: {
+        text: "Sort by"
+      },
+      items: availableOptions
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+{% endblock %}
